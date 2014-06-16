@@ -1,0 +1,49 @@
+<h1> Books List </h1>
+
+<table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Ispn_no</th>
+        <th></th>
+
+    </tr>
+    </thead>
+
+
+</table>
+
+
+
+<script>
+
+    $(document).ready(function() {
+        var selected = [];
+
+        $("#example").dataTable({
+            "ajax": "/books.json",
+            "aoColumns": [null, null, null,{ "sTitle": "Actions","bSearchable": false,"bSortable": false, "mRender": function ( data, type, row)  {
+                var s= 1
+                return  '<a href=#/books/' + row["id"] + '/edit >Edit</a></br><a href=#/books/' + row["id"] + ' >Show</a></br><a {{action 'book_delete'  }} id= '+  row["id"]  +' >Delete</a>';
+            }}]
+        });
+
+        $(document).on("click", "#example tbody tr", function () {
+
+            var id = this.id;
+            var index = $.inArray(id, selected);
+
+            if ( index === -1 ) {
+                selected.push( id );
+            } else {
+                selected.splice( index, 1 );
+            }
+
+            $(this).toggleClass('selected');
+        } );
+    } );
+
+
+
+</script>

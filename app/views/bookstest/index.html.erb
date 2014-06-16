@@ -1,0 +1,12 @@
+<script type='text/x-handlebars' data-template-name='application'>
+  <a href="/books">Home</a>
+  <a href="#/about">About</a>
+  <a {{action "application_book" }}>Books List</a>
+  <a href="#/books/new">New book</a>
+
+<div class='container'>
+{{outlet}}
+</div>
+
+</script>
+

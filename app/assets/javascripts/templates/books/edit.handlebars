@@ -1,0 +1,10 @@
+<h1> Edit </h1>
+<form {{action "submit" on="submit" }} id="test_ember" >
+    {{input type="hidden"  id="id" value=id}}
+    <p><label>Name {{input type="text"  name="name" value=name}}</label></p>
+    <p><label>Author {{input type="text"  name="author" value=author}}</label></p>
+    <p><label>Ispn_no {{input type="text"  name="ispn_no" value=ispn_no}}</label></p>
+
+    <button {{action "cancel"}}>Cancel</button>
+    <input type="submit" {{action 'book_update' name=id}}>
+</form>

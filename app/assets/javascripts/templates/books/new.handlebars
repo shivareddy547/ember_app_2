@@ -1,0 +1,9 @@
+<h1> New </h1>
+<form {{action "submit" on="submit" }} id="test_ember" >
+    <p><label>Name {{input type="text"  name="name"}}</label></p>
+    <p><label>Author {{input type="text"  name="author"}}</label></p>
+    <p><label>Ispn_no {{input type="text"  name="ispn_no"}}</label></p>
+
+    <button {{action "cancel"}}>Cancel</button>
+    <input type="submit" {{action 'book_create' bindAttr value=submitTitle}}>
+</form>

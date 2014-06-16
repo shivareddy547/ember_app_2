@@ -1,0 +1,2 @@
+module BookstestHelper
+end
